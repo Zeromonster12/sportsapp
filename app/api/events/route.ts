@@ -4,9 +4,9 @@ import { fetchEvents } from "../../../lib/fetchEvents";
 export async function GET(request: NextRequest) {
   try {
     const searchParams = request.nextUrl.searchParams;
-    const sport = searchParams.get("sport") || undefined;
+    const sport = searchParams.get("sport");
 
-    const events = await fetchEvents(sport);
+    const events = await fetchEvents(sport || "1");
 
     return NextResponse.json({ events, timestamp: new Date().toISOString() });
   } catch (error) {
