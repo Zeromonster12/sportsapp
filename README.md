@@ -116,7 +116,7 @@ npm start
 
 ## Nasadená verzia
 
-**Live Demo:** [https://your-app-url.vercel.app](https://your-app-url.vercel.app)
+**Live Demo:** [https://sportsapp-deploy.vercel.app](https://sportsapp-deploy.vercel.app)
 
 ## Štruktúra projektu
 
