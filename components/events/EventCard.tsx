@@ -68,34 +68,29 @@ export function EventCard({ event, selectedSport }: EventCardProps) {
     (event as any).event_name ||
     null;
 
-  // Debug log (remove later)
-  if (!leagueName) {
-    console.log("Event data:", event);
-  }
-
   return (
     <div
       onClick={handleCardClick}
       className={`bg-zinc-900 rounded-lg transition relative ${
         matchHref ? "hover:bg-zinc-800 cursor-pointer" : "opacity-50"
-      } ${isFinished ? "p-3" : "p-4"} ${isLive ? "border border-red-500" : ""}`}
+      } ${isFinished ? "p-2 sm:p-3" : "p-3 sm:p-4"} ${isLive ? "border border-red-500" : ""}`}
     >
       {/* League name */}
       {leagueName && (
-        <div className="mb-3 pb-2 border-b border-zinc-800">
+        <div className="mb-2 sm:mb-3 pb-2 border-b border-zinc-800">
           <div className="flex items-center justify-center gap-2">
-            <div className="h-1 w-1 rounded-full bg-blue-500"></div>
-            <span className="text-sm font-medium text-zinc-300">
+            <div className="h-1 w-1 rounded-full bg-blue-500 hidden sm:block"></div>
+            <span className="text-xs sm:text-sm font-medium text-zinc-300 text-center">
               {leagueName}
             </span>
-            <div className="h-1 w-1 rounded-full bg-blue-500"></div>
+            <div className="h-1 w-1 rounded-full bg-blue-500 hidden sm:block"></div>
           </div>
         </div>
       )}
 
       {/* Favorite buttons */}
       {awayId && (
-        <div className="absolute top-3 left-3 z-10">
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-10">
           <FavoriteButton
             teamId={String(awayId)}
             teamName={away}
@@ -106,7 +101,7 @@ export function EventCard({ event, selectedSport }: EventCardProps) {
         </div>
       )}
       {homeId && (
-        <div className="absolute top-3 right-3 z-10">
+        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
           <FavoriteButton
             teamId={String(homeId)}
             teamName={home}
@@ -118,7 +113,7 @@ export function EventCard({ event, selectedSport }: EventCardProps) {
       )}
 
       {/* Card Content */}
-      <div className="flex items-center justify-center gap-6">
+      <div className="flex items-center justify-center gap-2 sm:gap-4 md:gap-6">
         <EventTeam
           id={awayId}
           name={away}

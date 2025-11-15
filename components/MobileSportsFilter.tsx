@@ -22,16 +22,16 @@ export function MobileSportsFilter({
   const displayedSports = showAll ? sports : sports.slice(0, 5);
 
   return (
-    <div className="lg:hidden mb-4 bg-white dark:bg-zinc-900 rounded-xl p-4 shadow">
-      <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-3">
+    <div className="lg:hidden mb-3 sm:mb-4 bg-white dark:bg-zinc-900 rounded-xl p-3 sm:p-4 shadow">
+      <h3 className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100 mb-2 sm:mb-3">
         Sports
       </h3>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {displayedSports.map((sport) => (
           <Link
             key={sport.id}
             href={`/?sport=${sport.id}`}
-            className={`px-3 py-2 rounded-lg text-sm font-medium transition flex items-center gap-2 ${
+            className={`px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition flex items-center gap-1.5 sm:gap-2 ${
               selectedSport === sport.id
                 ? "bg-blue-600 text-white"
                 : "bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
@@ -44,9 +44,11 @@ export function MobileSportsFilter({
         {sports.length > 5 && (
           <button
             onClick={() => setShowAll(!showAll)}
-            className="px-3 py-2 rounded-lg text-sm font-medium transition bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
+            className="px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-200 dark:hover:bg-zinc-700"
           >
-            {showAll ? "Show Less" : `Show More (${sports.length - 5})`}
+            {showAll
+              ? "Zobraziť menej"
+              : `Zobraziť viac (${sports.length - 5})`}
           </button>
         )}
       </div>

@@ -23,8 +23,8 @@ export default function HomeLayout({
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-zinc-50 dark:bg-black p-4">
-        <div className="flex gap-4 mx-auto max-w-6xl items-start">
+      <div className="min-h-screen bg-zinc-50 dark:bg-black p-2 sm:p-3 md:p-4">
+        <div className="flex gap-3 sm:gap-4 mx-auto max-w-6xl items-start">
           <div className="hidden lg:block">
             <Sidebar selectedSport={selectedSport} sports={sports} />
           </div>

@@ -22,23 +22,23 @@ export function EventScore({
 }: EventScoreProps) {
   if (hasScore && (isFinished || isLive)) {
     return (
-      <div className="flex flex-col items-center justify-center px-4 min-w-[100px]">
+      <div className="flex flex-col items-center justify-center px-2 sm:px-3 md:px-4 min-w-20 sm:min-w-[90px] md:min-w-[100px]">
         {isLive ? (
-          <span className="flex items-center gap-1.5 text-xs text-red-500 font-semibold mb-2 px-3 py-1 bg-red-500/10 rounded-full uppercase">
-            <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+          <span className="flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-red-500 font-semibold mb-1 sm:mb-2 px-2 sm:px-3 py-0.5 sm:py-1 bg-red-500/10 rounded-full uppercase">
+            <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-red-500 rounded-full animate-pulse"></span>
             Naživo
           </span>
         ) : isFinished ? (
-          <span className="text-xs text-zinc-400 font-medium mb-2 px-3 py-1 bg-zinc-800 rounded-full uppercase">
+          <span className="text-[10px] sm:text-xs text-zinc-400 font-medium mb-1 sm:mb-2 px-2 sm:px-3 py-0.5 sm:py-1 bg-zinc-800 rounded-full uppercase">
             Ukončené
           </span>
         ) : null}
-        <div className="text-lg font-bold text-white">
+        <div className="text-base sm:text-lg md:text-xl font-bold text-white">
           {awayScore} : {homeScore}
         </div>
-        <div className="flex items-center justify-center gap-1.5 text-xs text-zinc-400 mt-1.5">
+        <div className="flex items-center justify-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-zinc-400 mt-1 sm:mt-1.5">
           <svg
-            className="w-3.5 h-3.5"
+            className="w-3 h-3 sm:w-3.5 sm:h-3.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -52,9 +52,9 @@ export function EventScore({
           </svg>
           <span className="font-medium">{formatTime(eventDate)}</span>
         </div>
-        <div className="flex items-center justify-center gap-1.5 text-xs text-zinc-500 mt-0.5">
+        <div className="flex items-center justify-center gap-1 sm:gap-1.5 text-[10px] sm:text-xs text-zinc-500 mt-0.5">
           <svg
-            className="w-3.5 h-3.5"
+            className="w-3 h-3 sm:w-3.5 sm:h-3.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -73,14 +73,14 @@ export function EventScore({
   }
 
   return (
-    <div className="flex flex-col items-center justify-center px-4 min-w-[100px]">
-      <span className="text-xs text-blue-400 font-medium mb-2 px-3 py-1 bg-blue-500/10 rounded-full uppercase">
+    <div className="flex flex-col items-center justify-center px-2 sm:px-3 md:px-4 min-w-20 sm:min-w-[90px] md:min-w-[100px]">
+      <span className="text-[10px] sm:text-xs text-blue-400 font-medium mb-1 sm:mb-2 px-2 sm:px-3 py-0.5 sm:py-1 bg-blue-500/10 rounded-full uppercase">
         Naplánované
       </span>
       <div className="text-center">
-        <div className="flex items-center justify-center gap-2 text-base font-semibold text-zinc-300">
+        <div className="flex items-center justify-center gap-1 sm:gap-2 text-sm sm:text-base font-semibold text-zinc-300">
           <svg
-            className="w-4 h-4"
+            className="w-3 h-3 sm:w-4 sm:h-4"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -94,9 +94,9 @@ export function EventScore({
           </svg>
           {formatTime(eventDate)}
         </div>
-        <div className="flex items-center justify-center gap-1.5 text-sm text-zinc-400 mt-1.5">
+        <div className="flex items-center justify-center gap-1 sm:gap-1.5 text-xs sm:text-sm text-zinc-400 mt-1 sm:mt-1.5">
           <svg
-            className="w-3.5 h-3.5"
+            className="w-3 h-3 sm:w-3.5 sm:h-3.5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"

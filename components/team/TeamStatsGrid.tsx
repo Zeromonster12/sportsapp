@@ -15,25 +15,25 @@ export function TeamStatsGrid({ stats }: TeamStatsGridProps) {
   if (!hasPointsStats && !hasFormStats) return null;
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6">
       {/* Points Stats */}
       {pointsFor != null && (
-        <div className="bg-zinc-900 rounded-lg p-6">
+        <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Strelené body</div>
-          <div className="text-3xl font-bold text-green-400">{pointsFor}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-green-400">{pointsFor}</div>
         </div>
       )}
       {pointsAgainst != null && (
-        <div className="bg-zinc-900 rounded-lg p-6">
+        <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Inkasované body</div>
-          <div className="text-3xl font-bold text-red-400">{pointsAgainst}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-red-400">{pointsAgainst}</div>
         </div>
       )}
       {pointsDiff != null && (
-        <div className="bg-zinc-900 rounded-lg p-6">
+        <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Rozdiel bodov</div>
           <div
-            className={`text-3xl font-bold ${
+            className={`text-2xl sm:text-3xl font-bold ${
               Number(pointsDiff) > 0
                 ? "text-green-400"
                 : Number(pointsDiff) < 0
@@ -49,15 +49,15 @@ export function TeamStatsGrid({ stats }: TeamStatsGridProps) {
 
       {/* Streak & Form */}
       {streak && (
-        <div className="bg-zinc-900 rounded-lg p-6">
+        <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Aktuálna séria</div>
-          <div className="text-3xl font-bold text-white">{streak}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-white">{streak}</div>
         </div>
       )}
       {lastTen && (
-        <div className="bg-zinc-900 rounded-lg p-6">
+        <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Posledných 10</div>
-          <div className="text-3xl font-bold text-white">
+          <div className="text-2xl sm:text-3xl font-bold text-white">
             {typeof lastTen === "string"
               ? lastTen
               : `${lastTen.wins ?? 0}-${lastTen.losses ?? 0}`}

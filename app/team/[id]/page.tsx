@@ -102,16 +102,6 @@ export default async function TeamPage({
         )}
 
         <TeamFallbackData team={data.rawData} hasBasicStats={hasBasicStats} />
-
-        {/* Debug Section */}
-        <details className="mt-6 bg-zinc-900 rounded-lg p-6">
-          <summary className="text-sm font-medium text-zinc-400 cursor-pointer hover:text-zinc-300">
-            🔍 Dostupné dáta z API (debug)
-          </summary>
-          <pre className="mt-4 text-xs text-zinc-500 overflow-x-auto">
-            {JSON.stringify(team, null, 2)}
-          </pre>
-        </details>
       </div>
     </div>
   );

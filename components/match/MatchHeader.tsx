@@ -11,11 +11,11 @@ interface MatchHeaderProps {
 export function MatchHeader({ home, away, meta, status }: MatchHeaderProps) {
   return (
     <>
-      <h1 className="text-2xl font-bold text-white">
+      <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-white">
         {home} vs {away}
       </h1>
 
-      <div className="mt-4 flex flex-wrap gap-2 text-xs">
+      <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 text-xs">
         {meta.eventDate && (
           <span className="px-2 py-1 rounded bg-zinc-900 text-zinc-300">
             {meta.eventDate.toLocaleString("sk-SK", {

@@ -58,9 +58,9 @@ export default async function MatchPage({
   return (
     <>
       <Navbar />
-      <div className="min-h-screen bg-zinc-50 dark:bg-black p-4">
+      <div className="min-h-screen bg-zinc-50 dark:bg-black p-2 sm:p-4">
         <div className="mx-auto max-w-4xl">
-          <div className="mb-6">
+          <div className="mb-4 sm:mb-6">
             <Link
               href="/"
               className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-700 transition"
@@ -81,7 +81,7 @@ export default async function MatchPage({
             </Link>
           </div>
 
-          <div className="bg-zinc-800 rounded-lg p-6 shadow-lg">
+          <div className="bg-zinc-800 rounded-lg p-3 sm:p-4 md:p-6 shadow-lg">
             <MatchHeader
               home={data.home.name}
               away={data.away.name}
@@ -125,16 +125,6 @@ export default async function MatchPage({
               meta={data.meta}
               status={data.status}
             />
-
-            {/* Debug: Available Data */}
-            <details className="mt-6 p-4 bg-zinc-900 rounded-lg">
-              <summary className="text-sm font-medium text-zinc-300 cursor-pointer">
-                🔍 Dostupné dáta z API (debug)
-              </summary>
-              <pre className="mt-3 text-xs text-zinc-400 overflow-auto max-h-96">
-                {JSON.stringify(match, null, 2)}
-              </pre>
-            </details>
           </div>
         </div>
       </div>

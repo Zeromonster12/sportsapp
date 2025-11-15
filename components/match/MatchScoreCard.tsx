@@ -17,12 +17,12 @@ export function MatchScoreCard({
   meta,
 }: MatchScoreCardProps) {
   return (
-    <div className="mt-6 p-6 bg-zinc-900 rounded-lg">
-      <div className="flex items-center justify-center gap-12">
+    <div className="mt-4 sm:mt-6 p-3 sm:p-4 md:p-6 bg-zinc-900 rounded-lg">
+      <div className="flex items-center justify-center gap-3 sm:gap-6 md:gap-12">
         {/* Away Team */}
-        <div className="flex flex-col items-center gap-3 flex-1 max-w-[35%]">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 flex-1 max-w-[35%]">
           <div
-            className={`w-16 h-16 rounded-full flex items-center justify-center ${
+            className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center ${
               score.awayWon
                 ? "bg-green-600"
                 : score.homeWon
@@ -30,10 +30,10 @@ export function MatchScoreCard({
                 : "bg-zinc-800"
             }`}
           >
-            <span className="text-2xl font-bold">{away.abbreviation}</span>
+            <span className="text-sm sm:text-lg md:text-2xl font-bold">{away.abbreviation}</span>
           </div>
           <span
-            className={`font-semibold text-lg text-center ${
+            className={`font-semibold text-xs sm:text-sm md:text-lg text-center truncate w-full ${
               score.awayWon
                 ? "text-green-400"
                 : score.homeWon
@@ -46,27 +46,27 @@ export function MatchScoreCard({
         </div>
 
         {/* Score */}
-        <div className="flex flex-col items-center justify-center px-8">
+        <div className="flex flex-col items-center justify-center px-2 sm:px-4 md:px-8">
           {status.isLive && (
-            <span className="text-sm text-red-500 font-semibold mb-2 uppercase">
+            <span className="text-xs sm:text-sm text-red-500 font-semibold mb-1 sm:mb-2 uppercase">
               Live
             </span>
           )}
           {status.isFinal && (
-            <span className="text-sm text-zinc-500 font-medium mb-2 uppercase">
+            <span className="text-xs sm:text-sm text-zinc-500 font-medium mb-1 sm:mb-2 uppercase">
               Final
             </span>
           )}
           {score.home != null && score.away != null ? (
-            <div className="text-5xl font-bold text-white">
+            <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
               {score.away} : {score.home}
             </div>
           ) : (
-            <div className="text-2xl font-medium text-zinc-400">VS</div>
+            <div className="text-xl sm:text-2xl font-medium text-zinc-400">VS</div>
           )}
           {meta.eventDate && (
-            <div className="mt-3 text-center">
-              <div className="text-sm text-zinc-400">
+            <div className="mt-2 sm:mt-3 text-center">
+              <div className="text-xs sm:text-sm text-zinc-400">
                 {meta.eventDate.toLocaleTimeString("sk-SK", {
                   timeZone: "Europe/Bratislava",
                   hour: "2-digit",
@@ -86,9 +86,9 @@ export function MatchScoreCard({
         </div>
 
         {/* Home Team */}
-        <div className="flex flex-col items-center gap-3 flex-1 max-w-[35%]">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 flex-1 max-w-[35%]">
           <div
-            className={`w-16 h-16 rounded-full flex items-center justify-center ${
+            className={`w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center ${
               score.homeWon
                 ? "bg-green-600"
                 : score.awayWon
@@ -96,10 +96,10 @@ export function MatchScoreCard({
                 : "bg-zinc-800"
             }`}
           >
-            <span className="text-2xl font-bold">{home.abbreviation}</span>
+            <span className="text-sm sm:text-lg md:text-2xl font-bold">{home.abbreviation}</span>
           </div>
           <span
-            className={`font-semibold text-lg text-center ${
+            className={`font-semibold text-xs sm:text-sm md:text-lg text-center truncate w-full ${
               score.homeWon
                 ? "text-green-400"
                 : score.awayWon

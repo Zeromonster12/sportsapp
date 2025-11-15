@@ -17,12 +17,12 @@ export function MatchTeamLinks({ home, away, sportId }: MatchTeamLinksProps) {
   };
 
   return (
-    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-      <div className="rounded bg-zinc-900 p-4">
+    <div className="mt-4 sm:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+      <div className="rounded bg-zinc-900 p-3 sm:p-4">
         <div className="text-xs uppercase tracking-wide text-zinc-500">
           Domáci
         </div>
-        <div className="mt-2 text-lg font-semibold text-zinc-100">
+        <div className="mt-2 text-base sm:text-lg font-semibold text-zinc-100">
           {home.id ? (
             <Link href={getTeamLink(home.id)!} className="hover:underline">
               {home.name}
@@ -32,11 +32,11 @@ export function MatchTeamLinks({ home, away, sportId }: MatchTeamLinksProps) {
           )}
         </div>
       </div>
-      <div className="rounded bg-zinc-900 p-4">
+      <div className="rounded bg-zinc-900 p-3 sm:p-4">
         <div className="text-xs uppercase tracking-wide text-zinc-500">
           Hostia
         </div>
-        <div className="mt-2 text-lg font-semibold text-zinc-100">
+        <div className="mt-2 text-base sm:text-lg font-semibold text-zinc-100">
           {away.id ? (
             <Link href={getTeamLink(away.id)!} className="hover:underline">
               {away.name}

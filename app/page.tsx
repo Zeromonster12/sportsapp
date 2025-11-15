@@ -44,8 +44,8 @@ export default async function Home({
           sports={normalizedSports}
         />
 
-        <div className="bg-white dark:bg-zinc-900 rounded-xl p-6 shadow">
-          <h1 className="text-2xl font-semibold mb-4">
+        <div className="bg-white dark:bg-zinc-900 rounded-xl p-3 sm:p-4 md:p-6 shadow">
+          <h1 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4">
             {sportName || "Events"}
           </h1>
 
