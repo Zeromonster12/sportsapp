@@ -1,36 +1,136 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SportsApp - Live Športové Výsledky
 
-## Getting Started
+Moderná webová aplikácia na sledovanie live športových zápasov s podporou viacerých športov (NBA, NFL, MLB, NHL, NCAA a ďalšie). Aplikácia poskytuje real-time aktualizácie skóre, detailné štatistiky tímov a zápasov, možnosť sledovania obľúbených tímov a používateľskú autentifikáciu.
 
-First, run the development server:
+## Funkcie
+
+- **Live výsledky** - Automatická aktualizácia každých 60 sekúnd
+- **Viacero športov** - NBA, NFL, MLB, NHL, NCAA Football, NCAA Basketball a ďalšie
+- **Filtrovanie** - Podľa športu a statusu zápasu (Live, Naplánované, Ukončené)
+- **Detailné informácie** - Podstránky pre zápasy (`/match/[id]`) a tímy (`/team/[id]`)
+- **Štatistiky tímov** - Komplexné štatistiky (ofenzíva, obrana, skórovanie)
+- **Autentifikácia** - Prihlásenie cez Google OAuth alebo email/heslo (Supabase)
+- **Obľúbené tímy** - Ukladanie a správa obľúbených tímov
+- **Responzívny dizajn** - Optimalizované pre desktop aj mobile
+
+## Technológie
+
+- **Framework:** Next.js 15 (App Router)
+- **Jazyk:** TypeScript
+- **Štýly:** TailwindCSS
+- **Dáta:** TheRundown API (RapidAPI)
+- **Databáza:** Supabase
+- **Autentifikácia:** Supabase Auth
+- **Data Fetching:** SWR (s automatickým refreshom)
+- **Caching:** Next.js revalidate
+
+## Predpoklady
+
+- Node.js 18+
+- npm, yarn, alebo pnpm
+- RapidAPI účet (TheRundown API)
+- Supabase projekt
+
+## Lokálne spustenie
+
+### 1. Klonovanie repozitára
+
+```bash
+git clone <repository-url>
+cd sportsapp
+```
+
+### 2. Inštalácia závislostí
+
+```bash
+npm install
+```
+
+### 3. Nastavenie environment premenných
+
+Vytvorte `.env.local` súbor v root priečinku:
+
+```env
+# TheRundown API (RapidAPI)
+RUNDOWN_API_HOST=therundown-therundown-v1.p.rapidapi.com
+RUNDOWN_API_KEY=your_rapidapi_key_here
+
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 4. Spustenie vývojového servera
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Aplikácia bude dostupná na [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 5. Build pre production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## API Klúče
 
-To learn more about Next.js, take a look at the following resources:
+### TheRundown API (RapidAPI)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Zaregistrujte sa na [RapidAPI](https://rapidapi.com/)
+2. Prihláste sa k [TheRundown API](https://rapidapi.com/therundown/api/therundown)
+3. Skopírujte váš API kľúč do `.env.local`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Supabase
 
-## Deploy on Vercel
+1. Vytvorte projekt na [Supabase](https://supabase.com/)
+2. Prejdite do Settings → API
+3. Skopírujte `Project URL` a `anon/public key` do `.env.local`
+4. Povoľte Google OAuth v Authentication → Providers
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Hlavné funkcie
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Filtrovanie zápasov
+
+- Výber športu z bočného menu (desktop) alebo z mobilného filtra
+- Filtrovanie podľa statusu: Všetky / Naživo / Naplánované / Ukončené
+
+### Detailné zobrazenie
+
+- **Zápasy**: Skóre, štatistiky, kurzy, head-to-head
+- **Tímy**: Kompletné štatistiky sezóny (ofenzíva, obrana, skórovanie)
+
+### Používateľské účty
+
+- Registrácia/prihlásenie cez Google alebo email
+- Správa profilu
+- Ukladanie obľúbených tímov
+
+## Cache stratégia
+
+- **Hlavná stránka**: 60 sekúnd (kvôli live skóre)
+- **Športy**: 5 minút
+- **Tímy**: 24 hodín (štatistiky sa menia raz denne)
+
+## Nasadená verzia
+
+**Live Demo:** [https://your-app-url.vercel.app](https://your-app-url.vercel.app)
+
+## Štruktúra projektu
+
+```
+sportsapp/
+├── app/                    # Next.js App Router
+│   ├── api/               # API routes
+│   ├── auth/              # Autentifikácia
+│   ├── match/[id]/        # Detail zápasu
+│   ├── team/[id]/         # Detail tímu
+│   └── page.tsx           # Hlavná stránka
+├── components/            # React komponenty
+├── context/              # React Context (AuthContext)
+├── hooks/                # Custom hooks
+├── lib/                  # Utility funkcie a API
+└── public/               # Statické súbory
+```
