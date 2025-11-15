@@ -56,7 +56,9 @@ export function EventTeam({
               {name}
             </Link>
           ) : (
-            <span className={`text-xs sm:text-sm md:text-base font-medium text-right truncate min-w-0 ${colorClasses}`}>
+            <span
+              className={`text-xs sm:text-sm md:text-base font-medium text-right truncate min-w-0 ${colorClasses}`}
+            >
               {name}
             </span>
           )}
@@ -82,7 +84,9 @@ export function EventTeam({
               {name}
             </Link>
           ) : (
-            <span className={`text-xs sm:text-sm md:text-base font-medium truncate min-w-0 ${colorClasses}`}>
+            <span
+              className={`text-xs sm:text-sm md:text-base font-medium truncate min-w-0 ${colorClasses}`}
+            >
               {name}
             </span>
           )}

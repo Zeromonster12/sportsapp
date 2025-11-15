@@ -73,7 +73,9 @@ export function EventCard({ event, selectedSport }: EventCardProps) {
       onClick={handleCardClick}
       className={`bg-zinc-900 rounded-lg transition relative ${
         matchHref ? "hover:bg-zinc-800 cursor-pointer" : "opacity-50"
-      } ${isFinished ? "p-2 sm:p-3" : "p-3 sm:p-4"} ${isLive ? "border border-red-500" : ""}`}
+      } ${isFinished ? "p-2 sm:p-3" : "p-3 sm:p-4"} ${
+        isLive ? "border border-red-500" : ""
+      }`}
     >
       {/* League name */}
       {leagueName && (

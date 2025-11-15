@@ -30,7 +30,9 @@ export function MatchScoreCard({
                 : "bg-zinc-800"
             }`}
           >
-            <span className="text-sm sm:text-lg md:text-2xl font-bold">{away.abbreviation}</span>
+            <span className="text-sm sm:text-lg md:text-2xl font-bold">
+              {away.abbreviation}
+            </span>
           </div>
           <span
             className={`font-semibold text-xs sm:text-sm md:text-lg text-center truncate w-full ${
@@ -62,7 +64,9 @@ export function MatchScoreCard({
               {score.away} : {score.home}
             </div>
           ) : (
-            <div className="text-xl sm:text-2xl font-medium text-zinc-400">VS</div>
+            <div className="text-xl sm:text-2xl font-medium text-zinc-400">
+              VS
+            </div>
           )}
           {meta.eventDate && (
             <div className="mt-2 sm:mt-3 text-center">
@@ -96,7 +100,9 @@ export function MatchScoreCard({
                 : "bg-zinc-800"
             }`}
           >
-            <span className="text-sm sm:text-lg md:text-2xl font-bold">{home.abbreviation}</span>
+            <span className="text-sm sm:text-lg md:text-2xl font-bold">
+              {home.abbreviation}
+            </span>
           </div>
           <span
             className={`font-semibold text-xs sm:text-sm md:text-lg text-center truncate w-full ${

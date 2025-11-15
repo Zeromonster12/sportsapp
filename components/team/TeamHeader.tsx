@@ -27,13 +27,17 @@ export function TeamHeader({
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
         {/* Team Avatar */}
         <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-zinc-800 flex items-center justify-center shrink-0">
-          <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">{teamAbbr}</span>
+          <span className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+            {teamAbbr}
+          </span>
         </div>
 
         {/* Team Info */}
         <div className="flex-1 w-full">
           <div className="flex items-start justify-between mb-2 gap-2">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">{name}</h1>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
+              {name}
+            </h1>
             <FavoriteButton
               teamId={id}
               teamName={name}
@@ -41,7 +45,11 @@ export function TeamHeader({
               abbreviation={abbreviation}
             />
           </div>
-          {mascot && <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-3">{mascot}</p>}
+          {mascot && (
+            <p className="text-base sm:text-lg md:text-xl text-zinc-400 mb-3">
+              {mascot}
+            </p>
+          )}
           <div className="flex flex-wrap gap-2">
             {abbreviation && (
               <span className="px-3 py-1 rounded-full bg-zinc-800 text-zinc-300 text-sm">
@@ -73,7 +81,9 @@ export function TeamHeader({
               {wins ?? 0}-{losses ?? 0}
               {ties != null && ties > 0 && `-${ties}`}
             </div>
-            <div className="text-xs sm:text-sm text-zinc-500 mt-1">Bilancia</div>
+            <div className="text-xs sm:text-sm text-zinc-500 mt-1">
+              Bilancia
+            </div>
             {winPct != null && (
               <div className="text-base sm:text-lg text-blue-400 font-medium mt-1">
                 {typeof winPct === "number"

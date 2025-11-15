@@ -20,13 +20,17 @@ export function TeamStatsGrid({ stats }: TeamStatsGridProps) {
       {pointsFor != null && (
         <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Strelené body</div>
-          <div className="text-2xl sm:text-3xl font-bold text-green-400">{pointsFor}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-green-400">
+            {pointsFor}
+          </div>
         </div>
       )}
       {pointsAgainst != null && (
         <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Inkasované body</div>
-          <div className="text-2xl sm:text-3xl font-bold text-red-400">{pointsAgainst}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-red-400">
+            {pointsAgainst}
+          </div>
         </div>
       )}
       {pointsDiff != null && (
@@ -51,7 +55,9 @@ export function TeamStatsGrid({ stats }: TeamStatsGridProps) {
       {streak && (
         <div className="bg-zinc-900 rounded-lg p-4 sm:p-6">
           <div className="text-xs text-zinc-500 mb-2">Aktuálna séria</div>
-          <div className="text-2xl sm:text-3xl font-bold text-white">{streak}</div>
+          <div className="text-2xl sm:text-3xl font-bold text-white">
+            {streak}
+          </div>
         </div>
       )}
       {lastTen && (
