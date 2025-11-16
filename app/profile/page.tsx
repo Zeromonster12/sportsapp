@@ -8,7 +8,6 @@ import { ProfileAvatar } from "@/components/profile/ProfileAvatar";
 import { ProfileForm } from "@/components/profile/ProfileForm";
 import { AccountInfo } from "@/components/profile/AccountInfo";
 import { ProfileActions } from "@/components/profile/ProfileActions";
-import { DangerZone } from "@/components/profile/DangerZone";
 import { useProfileForm } from "@/hooks/useProfileForm";
 
 export default function ProfilePage() {
@@ -99,8 +98,6 @@ export default function ProfilePage() {
             </div>
           </div>
         </div>
-
-        <DangerZone />
       </div>
     </div>
   );
